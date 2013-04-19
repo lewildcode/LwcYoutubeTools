@@ -3,17 +3,17 @@
 namespace LwcYoutubeTools\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
-use ZendGData\YouTube\PlaylistVideoEntry;
+use ZendGData\YouTube\VideoEntry;
 
 class Embed extends AbstractHelper
 {
     /**
-     * @param PlaylistVideoEntry $video
+     * @param VideoEntry $video
      * @param integer $width
      * @param integer $height
      * @return string
      */
-    public function __invoke(PlaylistVideoEntry $video, $width, $height)
+    public function __invoke(VideoEntry $video, $width, $height)
     {
         $embedAttribs = array(
             'allowscriptaccess' => 'always',
@@ -40,7 +40,8 @@ class Embed extends AbstractHelper
         }
         $output .= '>' . PHP_EOL;
         foreach($params as $name => $value) {
-            $output .= '<param name="' . $name .'" value="' . $this->view->escapeHtml($value) .'"></param>' . PHP_EOL;
+            $output .= '<param name="' . $name .'" value="' .
+                $this->view->escapeHtml($value) .'"></param>' . PHP_EOL;
         }
         $output .= '<embed ';
         foreach($embedAttribs as $attrib => $value) {

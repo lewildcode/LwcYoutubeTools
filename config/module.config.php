@@ -8,7 +8,8 @@ return array(
     ),
     'view_helpers' => array(
         'invokables' => array(
-            'youtubeFlashEmbed' => 'LwcYoutubeTools\View\Helper\Embed'
+            'youtubeFlashEmbed' => 'LwcYoutubeTools\View\Helper\Embed',
+            'youtubeIframe' => 'LwcYoutubeTools\View\Helper\Iframe'
         )
     )
 );
