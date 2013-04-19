@@ -11,7 +11,8 @@ class Iframe extends AbstractHtmlElement
      * @param VideoEntry $video
      * @param integer $width
      * @param integer $height
-     * @return string
+     * @param integer $frameborder OPTIONAL
+     * @return boolean|string
      */
     public function __invoke(VideoEntry $video, $width, $height, $frameborder = 0)
     {
@@ -19,6 +20,7 @@ class Iframe extends AbstractHtmlElement
             return false;
         }
         $attribs= array(
+            'class' => 'lwcyoutubeiframe',
             'width' => $width,
             'height' => $height,
             'src' => $this->getVideoUrl($video),
