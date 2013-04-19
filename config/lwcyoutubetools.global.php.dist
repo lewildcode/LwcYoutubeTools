@@ -1,0 +1,27 @@
+<?php
+
+$cacheDir = dirname(__FILE__) . '/../../data/cache';
+
+return array(
+    'lwcyoutubetools' => array(
+        'username' => 'your-youtube-username',
+        'use_cache' => true,
+        'zend_cache' => \Zend\Cache\StorageFactory::factory(array(
+            'adapter' => array(
+                'name' => 'filesystem',
+                'options' => array(
+                    'cache_dir' => $cacheDir
+                )
+            ),
+            'plugins' => array(
+                'exception_handler' => array(
+                    'throw_exceptions' => true
+                ),
+                'Serializer'
+            )
+        )),
+        'http_client' => array(
+            'sslverifypeer' => false
+        )
+    ),
+);
