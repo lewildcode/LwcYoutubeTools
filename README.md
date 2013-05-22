@@ -1,14 +1,13 @@
 LwcYoutubeTools
 ===============
 
-
 To install via composer, add the repository to your composer.json
 
     "repositories": [
         {
             "type": "package",
             "package": {
-                "name": "LwcYoutubeTools",
+                "name": "lwc/LwcYoutubeTools",
                 "version": "1.0.0",
                 "source": {
                     "url": "http://github.com/lewildcode/LwcYoutubeTools",
@@ -22,7 +21,7 @@ To install via composer, add the repository to your composer.json
 then add the package to the require block
 
     "require": {
-        "LwcYoutubeTools": "1.*",
+        "lwc/LwcYoutubeTools": "1.*",
         "zendframework/zendgdata": "2.*"
     }
 
